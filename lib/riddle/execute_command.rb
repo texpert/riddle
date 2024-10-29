@@ -31,7 +31,7 @@ class Riddle::ExecuteCommand
 
   def result_from_backticks
     begin
-      output = `#{command}`
+      output = %x(command)
     rescue SystemCallError => error
       output = error.message
     end
